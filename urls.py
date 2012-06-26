@@ -8,8 +8,8 @@ from api.resources import ObjectResource
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'DjangoTest.views.home', name='home'),
-    # url(r'^DjangoTest/', include('DjangoTest.foo.urls')),
+    # url(r'^$', 'WeThePeopleApi.views.home', name='home'),
+    # url(r'^WeThePeopleApi/', include('WeThePeopleApi.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
