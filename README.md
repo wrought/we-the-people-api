@@ -4,7 +4,22 @@ This is a sample API for the We The People petition application run on WhiteHous
 ##The API##
 WeThePeopleAPI is a Django Application with an implementation of the Django REST Framework (the "api" app). 
 
-###Requirements.txt###
+###GET and POST###
+Interact with the API by browsing to (or making requests with):
+	http://your-domain.com/petitions/
+	http://your-domain.com/petitions/{petition-id}/
+	http://your-domain.com/petitions/{petition-id}/signatures/
+	http://your-domain.com/petitions/{petition-id}/signatures/{signature-id}
+
+The Django REST Framework has an extremely friendly interface to interact with this data, providing a graphical means to submit both GET and POST requests. Further, data can be pulled and pushed in various formats easily specified in the URL by appending a value such as ?format=json
+
+###
+
+###Install###
+
+The proper Django environment can be easily configured by using the PIP python package manager and the requirements.txt file, read more here: http://en.wikipedia.org/wiki/Pip\_(python).
+
+####Requirements.txt####
 	Django==1.4
 	URLObject==2.0.2
 	argparse==1.2.1
