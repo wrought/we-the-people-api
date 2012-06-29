@@ -7,9 +7,11 @@ admin.autodiscover()
 from djangorestframework.views import ListOrCreateModelView, InstanceModelView
 from api.resources import PetitionResource, SignatureResource
 
+from api.views import HomeView
+
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'WeThePeopleApi.views.home', name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
     # url(r'^WeThePeopleApi/', include('WeThePeopleApi.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
