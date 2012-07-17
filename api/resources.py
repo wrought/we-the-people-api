@@ -17,7 +17,7 @@ class PetitionResource(ModelResource):
 
 class SignatureResource(ModelResource):
         model = Signature
-        fields = ('sid', 'name', 'petition', 'url')
+        fields = ('sig_num', 'sig_date' 'petition', 'first_name', 'first_initial', 'location_city', 'location_state', 'lat', 'lng', 'url')
 	# Method used to tie signatures to petitions
 	def petition(self, instance):
 		return reverse('petition', kwargs={'pid': instance.petition.pid})

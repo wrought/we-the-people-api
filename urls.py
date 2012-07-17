@@ -31,5 +31,5 @@ urlpatterns = patterns('',
     url(r'^petitions/$', ListOrCreateModelView.as_view(resource=AllPetitionsResource), name='petitions'),
     url(r'^petitions/(?P<pid>[^/]+)/$', InstanceModelView.as_view(resource=PetitionResource), name='petition'),
     url(r'^petitions/(?P<petition>[^/]+)/signatures/$', ListOrCreateModelView.as_view(resource=SignatureResource), name='signatures'),
-    url(r'^petitions/(?P<petition>[^/]+)/signatures/(?P<sid>[^/]+)/$', InstanceModelView.as_view(resource=SignatureResource), name='signature'),
+    url(r'^petitions/(?P<petition>[^/]+)/signatures/(?P<sig_num>[^/]+)/$', InstanceModelView.as_view(resource=SignatureResource), name='signature'),
 )
