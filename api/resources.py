@@ -2,6 +2,12 @@ from django.core.urlresolvers import reverse
 from djangorestframework.resources import ModelResource
 from api.models import Petition, Signature
 
+class AllPetitionsResource(ModelResource):
+	model = Petition
+	fields = ('pid', 'title', 'url')
+	def signatures(self, instance):
+		return reverse('signatures', kwargs={'petition': instance.pid})
+
 class PetitionResource(ModelResource):
 	model = Petition
 	fields = ('pid', 'title', 'url', 'whurl', 'description', 'created_at', 'issues', 'signature_count', 'signatures_needed')
