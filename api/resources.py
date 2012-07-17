@@ -4,7 +4,7 @@ from api.models import Petition, Signature
 
 class AllPetitionsResource(ModelResource):
 	model = Petition
-	fields = ('pid', 'title', 'url')
+	fields = ('pid', 'title', 'url', 'whurl') # @TODO make 'url' show up!
 	def signatures(self, instance):
 		return reverse('signatures', kwargs={'petition': instance.pid})
 

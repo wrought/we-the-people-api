@@ -3,10 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Petition(models.Model):
-	pid = models.CharField(primary_key=True, unique=True)
+	pid = models.CharField(primary_key=True, unique=True, max_length=20)
 	title = models.CharField(max_length=150)
 	# API URL
-	url = models.URLField(verify_exists=False, max_length=500)
+	url = models.URLField(verify_exists=False, editable=False)
 	# Whitehouse.gov URL
         whurl = models.URLField(verify_exists=True, max_length=500)
 	description = models.TextField()
@@ -21,12 +21,12 @@ class Signature(models.Model):
 	sig_date = models.DateField(auto_now=False, auto_now_add=False)
 	first_name = models.CharField(max_length=50)
 	last_initial = models.CharField(max_length=1)
-	location_city = models.Charfield(max_length=100)
-	location_state = models.Charfield(max_length=100)
+	location_city = models.CharField(max_length=100)
+	location_state = models.CharField(max_length=100)
 	lat = models.DecimalField(max_digits=18, decimal_places=15)
 	lng = models.DecimalField(max_digits=18, decimal_places=15)
 	# API URL
-	url = models.URLField(verify_exists=False, max_length=500)
+	url = models.URLField(verify_exists=False, editable=False)
 
 	class Meta:
 		ordering = ["sig_num"]
